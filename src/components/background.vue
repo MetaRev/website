@@ -260,27 +260,23 @@ let preIntervalId, colorIntervalId
 
 onMounted(() => {
   let preHue = 0
-  let colorHue = 180 // Start differently for variety
+  let colorHue = 180
 
-  // Pre elements color changer - slower speed, more saturated
   preIntervalId = setInterval(() => {
     const preElements = document.querySelectorAll('pre')
     preHue = (preHue + 1) % 360
     preElements.forEach((el) => {
-      // More saturated, medium lightness
       el.style.color = `hsl(${preHue}, 90%, 55%)`
     })
-  }, 300) // slower
+  }, 300)
 
-  // .color elements color changer - faster speed, lighter shade
   colorIntervalId = setInterval(() => {
     const colorElements = document.querySelectorAll('.color')
     colorHue = (colorHue + 3) % 360
     colorElements.forEach((el) => {
-      // Less saturated, lighter
       el.style.color = `hsl(${colorHue}, 100%, 50%)`
     })
-  }, 100) // faster
+  }, 100)
 })
 
 onBeforeUnmount(() => {
