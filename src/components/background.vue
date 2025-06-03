@@ -303,18 +303,18 @@ onBeforeUnmount(() => {
 }
 
 .inner {
-  position: fixed;
+  position: absolute;
   left: 23%;
 }
 
 .about {
-  position: fixed;
+  position: absolute;
   left: 25%;
   font-size: 0.9em;
 }
 
 .cornerline {
-  position: fixed;
+  position: absolute;
   right: 22.7%;
 }
 
